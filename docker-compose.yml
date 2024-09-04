@@ -1,0 +1,20 @@
+services:
+ 
+ 
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - 7687:7687
+      - 7474:7474
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/plugins:/plugins
+      - ./neo4j/import:/var/lib/neo4j/import
+      - ./neo4j/logs:/logs
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_PLUGINS=["apoc", "graph-data-science"]
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_db_tx__log_rotation_retention__policy=false
