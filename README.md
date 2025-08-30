@@ -10,4 +10,4 @@ import pandas as pd
 - list 2
 - list3
 
-> This was for the supplementary video for Fall 24 and can be cleaned up after the semester.
+
